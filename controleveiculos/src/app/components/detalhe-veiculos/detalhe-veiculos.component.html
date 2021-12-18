@@ -1,0 +1,86 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1"><p>Detalhamento de Veículo:</p> </span>
+    </div>
+</nav>
+<br>
+
+<div class="container">
+    <form *ngIf="veiculo" style="text-align: center; ">
+        <div class="col-sm-6 " style="background-color: lightskyblue; ">
+            <div class="form-group row " style="background-color: lightskyblue; ">
+                <label for="id " class="col-sm-2 col-form-label " style="font-weight: bold;">Código: </label>
+                <div class="col-sm-6 ">
+                    <input type="text " readonly class="form-control-plaintext " id="id " value="{{veiculo.id}} ">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 " style="background-color: lightskyblue; ">
+            <div class="form-group row " style="background-color: lightskyblue; ">
+                <label for="created " class=" col-sm-2 col-form-label " style="font-weight: bold;">Data Cadastro: </label>
+                <div class="col-sm-6 ">
+                    <input type="text " readonly class="form-control-plaintext " id="created " value="{{veiculo.created}} ">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 " style="background-color: lightskyblue; ">
+            <div class="form-group row ">
+                <label for="veiculo " class="col-sm-2 col-form-label " style="font-weight: bold;">Veículo: </label>
+                <div class="col-sm-6 ">
+                    <input type="text " readonly class="form-control-plaintext " id="veiculo " value="{{veiculo.veiculo}} ">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 " style="background-color: lightskyblue; ">
+            <div class="form-group row " style="background-color: lightskyblue; ">
+                <label for="marca " class="col-sm-2 col-form-label " style="font-weight: bold;">Marca: </label>
+                <div class="col-sm-6 ">
+                    <input type="text " readonly class="form-control-plaintext " id="marca " value="{{veiculo.marca}} ">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 " style="background-color: lightskyblue; ">
+            <div class="form-group row " style="background-color: lightskyblue; ">
+                <label for="ano " class="col-sm-2 col-form-label " style="font-weight: bold;">Ano: </label>
+                <div class="col-sm-6 ">
+                    <input type="text " readonly class="form-control-plaintext " id="ano " value="{{veiculo.ano}} ">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 " style="background-color: lightskyblue; ">
+            <div class="form-group row " style="background-color: lightskyblue; ">
+                <label for="descricao " class="col-sm-2 col-form-label " style="font-weight: bold;">Descrição: </label>
+                <div class="col-sm-12 ">
+                    <textarea type="text " rows="3 " readonly class="form-control-plaintext " id="descricao " value="{{veiculo.descricao}} "></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 " style="background-color: lightskyblue; ">
+            <div class="form-group row " style="background-color: lightskyblue; ">
+                <label for="vendido " class="col-sm-2 col-form-label " style="font-weight: bold;">Situação: </label>
+                <div class="col-sm-6 ">
+                    <input type="text " readonly class="form-control-plaintext " id="vendido " style="color: red; font-weight: bold;" value="{{veiculo.vendido | SimOuNao }} ">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 " style="background-color: lightskyblue; ">
+            <div class="form-group row " style="background-color: lightskyblue; ">
+                <label for="updated " class="col-sm-2 col-form-label " style="font-weight: bold;">Última Atualização: </label>
+                <div class="col-sm-6 ">
+                    <input type="text " readonly class="form-control-plaintext " id="updated " value="{{veiculo.updated}} ">
+                </div>
+            </div>
+        </div>
+
+    </form>
+    <div>
+        <button type="button" class="btn btn-warning btn-lg mb-3" (click)="toList()"><i class="fa-solid fa-circle-arrow-left"></i> Voltar Para a Lista de Veículos</button>
+    </div>
+</div>

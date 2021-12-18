@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Pipe } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { CadastroVeiculosComponent } from './components/cadastro-veiculos/cadastro-veiculos.component';
+import { DetalheVeiculosComponent } from './components/detalhe-veiculos/detalhe-veiculos.component';
+import { SimOuNaoPipe } from './SimOuNaoPipe';
 
 
 
@@ -22,7 +24,11 @@ import { CadastroVeiculosComponent } from './components/cadastro-veiculos/cadast
     NavbarComponent,
     FooterComponent,
     VeiculosListComponent,
-    CadastroVeiculosComponent
+    CadastroVeiculosComponent,
+    DetalheVeiculosComponent,
+    SimOuNaoPipe
+  
+   
   ],
   imports: [
     BrowserModule,

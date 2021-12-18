@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 import { Observable } from 'rxjs';
@@ -21,7 +22,7 @@ veiculoSelecionado:Veiculos
 
 
 
-  constructor(private veiculoService:VeiculosService, private toastr: ToastrService) { }
+  constructor(private veiculoService:VeiculosService, private toastr: ToastrService, private router:Router) { }
 
   ngOnInit(): void {
     this.getVeiculo();
@@ -41,6 +42,10 @@ veiculoSelecionado:Veiculos
     
       () => this.toastr.error('ERRO! Não foi possível Deletar este Veículo')
     })
+  }
+  detalhaVeiculo(id:number):void{
+    this.toastr.info('Você está sendo redirecionado para a página de Detalhamentos de Veículo')
+this.router.navigate(['detalhes',id]);
   }
 
   
