@@ -1,0 +1,67 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1"><p>Atualizar Veículo:</p> </span>
+    </div>
+</nav>
+<br>
+<div class="container">
+    <form *ngIf="veiculo">
+
+        <div class="col-sm-6 ">
+            <div class="form-group row " style="background-color: lightskyblue; ">
+                <label for="veiculo " class="col-sm-2 col-form-label " style="font-weight: bold;">Veículo: </label>
+                <div class="col-sm-6 ">
+                    <input type="text " readonly class="form-control-plaintext " id="veiculo " value="{{veiculo.veiculo}} ">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6  ">
+            <div class="form-group row " style="background-color: lightskyblue; ">
+                <label for="marca " class="col-sm-2 col-form-label " style="font-weight: bold;">Marca: </label>
+                <div class="col-sm-6 ">
+                    <input type="text " readonly class="form-control-plaintext " id="marca " value="{{veiculo.marca}} ">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 ">
+            <div class="form-group row " style="background-color: lightskyblue; ">
+                <label for="ano " class="col-sm-2 col-form-label " style="font-weight: bold;">Ano: </label>
+                <div class="col-sm-6 ">
+                    <input type="text " readonly class="form-control-plaintext " id="ano " value="{{veiculo.ano}} ">
+                </div>
+            </div>
+        </div>
+    </form>
+    <div [hidden]="submitted">
+        <form (ngSubmit)="onSubmit()">
+            <div class="col-sm-6 pb-2 " style="background-color: tomato;">
+                <div class="form-group">
+                    <label for="descricao" style="font-weight: bold;"> Alterar Descrição:</label>
+                    <textarea class="form-control" id="descricao" required [(ngModel)]="veiculo.descricao" name="descricao" rows="3"></textarea>
+                </div>
+            </div>
+
+            <div class="col-sm-6 pb-2 " style="background-color: tomato;">
+                <div class="form-group">
+                    <label for="vendido" style="font-weight: bold;"> Alterar Situação:</label>
+                    <select class="custom-select custom-select-md" id="vendido" required [(ngModel)]="veiculo.vendido" name="vendido" style="margin-bottom: 3%;">
+                <option disabled selected for="vendido">Vendido?</option>
+                <option [ngValue]="true" >Sim</option>
+                <option [ngValue]="false">Não</option> 
+              </select>
+                </div>
+            </div>
+
+            <div class="col-sm-6 pb-2 " style="background-color: tomato;">
+                <div class="form-group">
+                    <label for="updated" style="font-weight: bold;"> Data Atualização:</label>
+                    <input class="form-control" id="update" required [(ngModel)]="veiculo.updated " name="descricao">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success btn-lg m-3" style="margin-bottom: 3%;"><i class="fas fa-check-circle"></i> Confirma Atualização</button>
+        </form>
+    </div>
+
+</div>

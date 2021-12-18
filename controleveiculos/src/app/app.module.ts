@@ -13,7 +13,8 @@ import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { CadastroVeiculosComponent } from './components/cadastro-veiculos/cadastro-veiculos.component';
 import { DetalheVeiculosComponent } from './components/detalhe-veiculos/detalhe-veiculos.component';
-import { SimOuNaoPipe } from './SimOuNaoPipe';
+import { SimOuNaoPipe } from './pipes/SimOuNaoPipe';
+import { AtualizaVeiculoComponent } from './components/atualiza-veiculo/atualiza-veiculo.component';
 
 
 
@@ -26,7 +27,8 @@ import { SimOuNaoPipe } from './SimOuNaoPipe';
     VeiculosListComponent,
     CadastroVeiculosComponent,
     DetalheVeiculosComponent,
-    SimOuNaoPipe
+    SimOuNaoPipe,
+    AtualizaVeiculoComponent
   
    
   ],

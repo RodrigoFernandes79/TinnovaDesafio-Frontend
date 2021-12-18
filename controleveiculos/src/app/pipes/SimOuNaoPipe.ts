@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from "@angular/core";
 import { Observable } from "rxjs";
-import { Veiculos } from "./veiculos";
+import { Veiculos } from "../veiculos";
 
 
 

@@ -47,6 +47,10 @@ veiculoSelecionado:Veiculos
     this.toastr.info('Você está sendo redirecionado para a página de Detalhamentos de Veículo')
 this.router.navigate(['detalhes',id]);
   }
+  atualizaVeiculo(id:number):void{
+    this.toastr.info('Você está sendo redirecionado para a página de Atualização de Veículo')
+    this.router.navigate(['/atualiza',id])
+  }
 
   
 }
