@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
@@ -13,30 +14,34 @@ import { VeiculosService } from 'src/app/veiculos.service';
 })
 export class VeiculosListComponent implements OnInit {
   
-veiculo:Observable<Veiculos[]> 
-veiculoSelecionado:Veiculos
 
-mensagemSucesso:string
-mensagemErro:string;
+veiculo:Observable<Veiculos[]>;
+veiculoSelecionado:Veiculos
+  
+
+
+
   constructor(private veiculoService:VeiculosService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getVeiculo();
   }
   getVeiculo():void{
-    this.veiculo = this.veiculoService.getVeiculo();
+    this.veiculo = this.veiculoService.getVeiculo()
+    
   }
-  preparaDelecao(veiculo:Veiculos){
-    this.veiculoSelecionado = veiculo
+  preparaDelecao(veiculos:Veiculos): void{
+    this.veiculoSelecionado = veiculos
   }
   deleteVeiculo():void{
     this.veiculoService.deleteVeiculoById(this.veiculoSelecionado.id)
     .subscribe(() =>{
-      this.toastr.success('Cliente Deletado Com Sucesso!')
+      this.toastr.success('Veículo Deletado Com Sucesso!')
       this.ngOnInit(), 
     
       () => this.toastr.error('ERRO! Não foi possível Deletar este Veículo')
     })
   }
 
+  
 }

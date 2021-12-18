@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
+import { CadastroVeiculosComponent } from './components/cadastro-veiculos/cadastro-veiculos.component';
 
 
 
@@ -20,7 +21,8 @@ import { ToastrModule } from 'ngx-toastr';
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    VeiculosListComponent
+    VeiculosListComponent,
+    CadastroVeiculosComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     CommonModule,
     BrowserAnimationsModule, 
-    ToastrModule.forRoot() 
+    ToastrModule.forRoot(),
+    
     
     
   
