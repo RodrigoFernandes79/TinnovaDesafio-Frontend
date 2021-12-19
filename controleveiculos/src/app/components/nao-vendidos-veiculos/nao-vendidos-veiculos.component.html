@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="card mb-4">
+
+        <div class="card-header ">
+            <i class="fas fa-table me-1"></i> Veículos não Vendidos
+        </div>
+        <div class="container" style="width:max-content;">
+            <div class="card-body">
+
+                <table id="datatablesSimple" class="table table-striped ">
+                    <thead class="table-dark ">
+                        <tr>
+                            <th scope="col ">Código </th>
+                            <th scope="col ">Veículo </th>
+                            <th scope="col ">Marca </th>
+                            <th scope="col ">Ano </th>
+                            <th scope="col ">Situação</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <ng-container *ngFor="let veic of veiculos|async ">
+                            <tr *ngIf="veic.vendido==false ">
+                                <td>{{veic.id}}</td>
+                                <td>{{veic.veiculo}}</td>
+                                <td>{{veic.marca }}</td>
+                                <td>{{veic.ano}}</td>
+                                <td style="color: red; ">{{veic.vendido| SimOuNao }}</td>
+                            </tr>
+                        </ng-container>
+
+
+                    </tbody>
+
+                </table>
+                <div>
+                    <button type="button " class="btn btn-warning btn-lg mb-3  " (click)="toList() "><i class="fa-solid fa-circle-arrow-left "></i> Voltar Para a Lista de Veículos</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
