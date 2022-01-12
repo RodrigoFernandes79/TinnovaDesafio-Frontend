@@ -16,6 +16,7 @@ import { DetalheVeiculosComponent } from './components/detalhe-veiculos/detalhe-
 import { SimOuNaoPipe } from './pipes/SimOuNaoPipe';
 import { AtualizaVeiculoComponent } from './components/atualiza-veiculo/atualiza-veiculo.component';
 import { NaoVendidosVeiculosComponent } from './components/nao-vendidos-veiculos/nao-vendidos-veiculos.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -30,7 +31,8 @@ import { NaoVendidosVeiculosComponent } from './components/nao-vendidos-veiculos
     DetalheVeiculosComponent,
     SimOuNaoPipe,
     AtualizaVeiculoComponent,
-    NaoVendidosVeiculosComponent
+    NaoVendidosVeiculosComponent,
+    LoginComponent
   
    
   ],
