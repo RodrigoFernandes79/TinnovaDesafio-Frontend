@@ -6,16 +6,24 @@ import { DetalheVeiculosComponent } from './components/detalhe-veiculos/detalhe-
 import { LoginComponent } from './components/login/login.component';
 import { NaoVendidosVeiculosComponent } from './components/nao-vendidos-veiculos/nao-vendidos-veiculos.component';
 import { VeiculosListComponent } from './components/veiculos-list/veiculos-list.component';
+import { LayoutComponent } from './layout/layout.component';
 
 
 const routes: Routes = [
-  {path:'', redirectTo:'login', pathMatch:'full'},
+  {path:'', redirectTo:'login',pathMatch:'full'},
   {path:'login', component:LoginComponent},
-  {path:'veiculos', component:VeiculosListComponent},
+  {path:'', component:LayoutComponent , children: [
+    
+ {path:'veiculos', component:VeiculosListComponent},
   {path:'cadastrar',component:CadastroVeiculosComponent},
   {path:'detalhes/:id' ,component:DetalheVeiculosComponent},
   {path:'atualiza/:id', component:AtualizaVeiculoComponent},
   {path:'naoVendidos', component:NaoVendidosVeiculosComponent}
+
+  ]}
+  
+  
+  
 ];
 
 @NgModule({
